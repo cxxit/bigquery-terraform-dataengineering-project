@@ -1,3 +1,6 @@
+# ignore files with sensitive information
+keys/*
+
 # Local .terraform directories
 .terraform/
 
