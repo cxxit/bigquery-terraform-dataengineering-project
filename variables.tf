@@ -1,3 +1,13 @@
+variable "project" {
+    description = "GCP Project"
+    default = "terraform-demo-501718"
+}
+
+variable "region" {
+    description = "GCP Project Region"
+    default = "asia-southeast1"
+}
+
 variable "location" {
     description = "GCP Project Location"
     default = "asia-southeast1"
