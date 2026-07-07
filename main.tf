@@ -9,8 +9,9 @@ terraform {
 
 provider "google" {
   # Configuration options
-  project = var.project
-  region  = var.region
+  credentials = file(var.credentials)
+  project     = var.project
+  region      = var.region
 }
 
 resource "google_storage_bucket" "demo-bucket" {
@@ -31,5 +32,5 @@ resource "google_storage_bucket" "demo-bucket" {
 # google_bigquery_dataset resource to create a BigQuery dataset
 resource "google_bigquery_dataset" "dataset" {
   dataset_id = var.bq_dataset_name
-  location = var.location
+  location   = var.location
 }
