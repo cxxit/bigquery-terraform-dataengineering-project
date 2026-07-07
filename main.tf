@@ -9,14 +9,13 @@ terraform {
 
 provider "google" {
   # Configuration options
-  project = "terraform-demo-501718"
-  region  = "asia-southeast1"
+  project = var.project
+  region  = var.region
 }
 
-
 resource "google_storage_bucket" "demo-bucket" {
-  name          = "terraform-demo-501718-terra-bucket"
-  location      = "ASIA-SOUTHEAST1"
+  name          = var.gcp_bucket_name
+  location      = var.location
   force_destroy = true
 
   lifecycle_rule {
@@ -31,6 +30,6 @@ resource "google_storage_bucket" "demo-bucket" {
 
 # google_bigquery_dataset resource to create a BigQuery dataset
 resource "google_bigquery_dataset" "dataset" {
-  dataset_id = "demo_dataset"
-  location = "asia-southeast1"
+  dataset_id = var.bq_dataset_name
+  location = var.location
 }
