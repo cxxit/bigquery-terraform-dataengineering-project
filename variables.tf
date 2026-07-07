@@ -1,3 +1,8 @@
+variable "credentials" {
+    description = "My Credentials"
+    default = file("./keys/my-creds.json")
+}
+
 variable "project" {
     description = "GCP Project"
     default = "terraform-demo-501718"
